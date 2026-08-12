@@ -1,0 +1,25 @@
+package OOPS;
+
+class Busdetails
+{
+	String busId;
+	String busNo;
+	String busRoute;
+	int driverId;
+	String driverName;
+	String assistantName;
+	int driver;
+	int seatCapacity;
+	String stoppings[];
+	String dropPoint;
+	
+}
+
+public class BusDetails {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
