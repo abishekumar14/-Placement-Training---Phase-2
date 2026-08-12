@@ -1,0 +1,149 @@
+package InheritanceExample;
+
+public class BankServicev1 {
+	void deposit(long accountNo,float amount)
+	{
+		System.out.println(" Amount  " + amount +" Deposited to  " +  accountNo);
+	}
+	void withDraw(long accountNo,float amount){
+		System.out.println("Amount withdrawn "+ amount +"From "+accountNo);
+	}
+	 void checkBalance(long accountNo, float balance) {
+	        System.out.println("Account No: " + accountNo);
+	        System.out.println("Current Balance: " + balance);
+	    }
+}
+
+package InheritanceExample;
+
+public class BankServiceV2 extends BankServicev1 {
+	
+	void updateAccountDetails() {
+		System.out.println("Account details updated");
+	}
+	void updateAadharNumber() {
+		System.out.println("Aadhar No updated");
+	}
+	void applyForPersonalLoan(long accNo,float loanAmount,int tenure)
+	
+	{
+		System.out.println("Ypur loan applicaiotn is processing....");
+	}
+
+}
+package InheritanceExample;
+
+public class BankServiceV3 extends BankServiceV2 {
+	void updateMobileNo()
+	{
+		System.out.println("Mobile number updated"); 
+	}
+	void updatePinNo() {
+		System.out.println("Card Pin No Updated ");
+	}
+	void transferMoney(long fromAcc, long toAcc,float amount)
+	{
+		System.out.println(amount+"Transferred from "+fromAcc+"to "+toAcc);
+	}
+}
+package InheritanceExample;
+
+public class SingleInhertiance {
+
+	public static void main(String[] args) {
+		
+		
+		
+		BankServicev1 obj = new BankServicev1();
+		
+		obj.deposit(2402002, 20000);
+        obj.withDraw(2402002, 10000);
+        obj.checkBalance(2402002, 2000000);
+				
+		BankServiceV2 obj2= new BankServiceV2();
+		
+		obj2.updateAccountDetails();
+	    obj2.updateAadharNumber();
+	    obj2.applyForPersonalLoan(2402002, 500000, 5);
+
+		BankServiceV3 service =new BankServiceV3();
+	
+		service.updateMobileNo();
+		service.updatePinNo();
+		service.transferMoney(2402002, 2402091,200000);
+
+	}
+
+}
+package InheritanceExample;
+
+import java.util.Scanner;
+
+public class SingleInhertiance {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        BankServicev1 obj1 = new BankServicev1();
+        BankServiceV2 obj2 = new BankServiceV2();
+        BankServiceV3 obj3 = new BankServiceV3();
+
+        System.out.println("1. Deposit");
+        System.out.println("2. Withdraw");
+        System.out.println("3. Check Balance");
+        System.out.println("4. Update Account Details");
+        System.out.println("5. Update Aadhar Number");
+        System.out.println("6. Apply Personal Loan");
+        System.out.println("7. Update Mobile Number");
+        System.out.println("8. Update PIN Number");
+        System.out.println("9. Transfer Money");
+
+        System.out.print("Enter your choice: ");
+        int choice = sc.nextInt();
+
+        switch (choice) {
+
+            case 1:
+                obj1.deposit(2402002, 20000);
+                break;
+
+            case 2:
+                obj1.withDraw(2402002, 10000);
+                break;
+
+            case 3:
+                obj1.checkBalance(2402002, 2000000);
+                break;
+
+            case 4:
+                obj2.updateAccountDetails();
+                break;
+
+            case 5:
+                obj2.updateAadharNumber();
+                break;
+
+            case 6:
+                obj2.applyForPersonalLoan(2402002, 500000, 5);
+                break;
+
+            case 7:
+                obj3.updateMobileNo();
+                break;
+
+            case 8:
+                obj3.updatePinNo();
+                break;
+
+            case 9:
+                obj3.transferMoney(2402002, 2402091, 200000);
+                break;
+
+            default:
+                System.out.println("Invalid choice");
+        }
+
+        sc.close();
+    }
+}
